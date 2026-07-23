@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://b6mykj6psi863"]
+
+[ext_resource type="Script" uid="uid://bj1s8xl6725gy" path="res://scripts/main_menu.gd" id="1_syvep"]
+
+[node name="MainMenu" type="Control" unique_id=607391493]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_syvep")
+
+[node name="Background" type="ColorRect" parent="." unique_id=453026220]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.46311802, 0.4802372, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1355277625]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenueItems" type="VBoxContainer" parent="CenterContainer" unique_id=1751731651]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/MenueItems" unique_id=890124820]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9302454, 0.70377743, 0.24344102, 1)
+theme_override_font_sizes/font_size = 48
+text = "Flappy Bird"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="CenterContainer/MenueItems" unique_id=1796428767]
+layout_mode = 2
+text = "Play"
+
+[connection signal="pressed" from="CenterContainer/MenueItems/PlayButton" to="." method="_on_play_button_pressed"]

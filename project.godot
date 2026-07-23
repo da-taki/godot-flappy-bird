@@ -13,7 +13,7 @@ config_version=5
 config/name="Godot-flappy-bird"
 config/description="Flappy bird game in godot
 "
-run/main_scene="uid://ckow7gsuko6ru"
+run/main_scene="uid://b6mykj6psi863"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

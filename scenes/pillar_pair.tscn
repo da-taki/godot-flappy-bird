@@ -17,7 +17,6 @@ script = ExtResource("1_abnah")
 
 [node name="TopPillar" type="StaticBody2D" parent="." unique_id=1789429282]
 position = Vector2(0, -260)
-constant_linear_velocity = Vector2(0, -260)
 
 [node name="Visual" type="ColorRect" parent="TopPillar" unique_id=2089632261]
 offset_left = -40.0

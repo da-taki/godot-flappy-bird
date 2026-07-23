@@ -28,7 +28,7 @@ func spawn_pillar() -> void:
 func add_score() -> void:
 	score += 1
 	update_score_label()
-	
+	 
 func update_score_label() -> void:
 	score_label.text = str(score)
 	
