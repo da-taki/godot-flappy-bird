@@ -3,6 +3,14 @@
 [ext_resource type="Script" uid="uid://blrl1nvcpj0ug" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cdduxsasus3qr" path="res://scenes/player.tscn" id="1_uwrxv"]
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_yqjtg"]
+a = Vector2(-637, 0)
+b = Vector2(627, 3)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_lnu2h"]
+a = Vector2(-597, 160)
+b = Vector2(613, 160)
+
 [node name="Game" type="Node2D" unique_id=965813210]
 script = ExtResource("1_lnu2h")
 
@@ -25,4 +33,15 @@ offset_bottom = 43.0
 theme_override_font_sizes/font_size = 32
 text = "0"
 
+[node name="Borders" type="Area2D" parent="." unique_id=834407360]
+
+[node name="UpperBorder" type="CollisionShape2D" parent="Borders" unique_id=182249413]
+position = Vector2(-1, -324)
+shape = SubResource("SegmentShape2D_yqjtg")
+
+[node name="LowerBorder" type="CollisionShape2D" parent="Borders" unique_id=355090589]
+position = Vector2(-2, 163)
+shape = SubResource("SegmentShape2D_lnu2h")
+
 [connection signal="timeout" from="PillarSpawnTimer" to="." method="_on_pillar_spawn_timer_timeout"]
+[connection signal="body_entered" from="Borders" to="." method="_on_borders_body_entered"]

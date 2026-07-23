@@ -8,6 +8,9 @@ const PILLAR_SCENE: PackedScene = preload("res://scenes/pillar_pair.tscn")
 
 @onready var score_label: Label = $UI/ScoreLabel
 
+signal lost
+var is_gameover: bool = false
+
 func _ready() -> void:
 	GameState.score = 0
 
@@ -34,7 +37,14 @@ func update_score_label() -> void:
 	score_label.text = str(GameState.score)
 
 func game_over() -> void:
+	if is_gameover:
+		return
+	is_gameover = true
 	get_tree().change_scene_to_file("res://scenes/lose_screen.tscn")
 	
 func _on_pillar_spawn_timer_timeout() -> void:
 	spawn_pillar()
+
+func _on_borders_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		game_over()
