@@ -5,11 +5,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2e4o8"]
 size = Vector2(80, 396)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1x3kl"]
+size = Vector2(79.5, 397.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abnah"]
 size = Vector2(80, 398)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_abnah"]
-a = Vector2(0, -57)
+a = Vector2(0, -61)
 b = Vector2(0, 60)
 
 [node name="PillarPair" type="Node2D" unique_id=664724534]
@@ -29,6 +32,12 @@ color = Color(0.3547322, 0.55229604, 1, 1)
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_2e4o8")
 
+[node name="LoseUpper" type="Area2D" parent="TopPillar" unique_id=2077520744]
+
+[node name="LoseUpperCollison" type="CollisionShape2D" parent="TopPillar/LoseUpper" unique_id=865473006]
+position = Vector2(0.25, -2.75)
+shape = SubResource("RectangleShape2D_1x3kl")
+
 [node name="BottomPillar" type="StaticBody2D" parent="." unique_id=1900881131]
 position = Vector2(0, 260)
 
@@ -42,9 +51,17 @@ offset_bottom = 200.0
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_abnah")
 
+[node name="LoseLower" type="Area2D" parent="BottomPillar" unique_id=1082272106]
+
+[node name="LoseLowerCollison" type="CollisionShape2D" parent="BottomPillar/LoseLower" unique_id=1849436675]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1x3kl")
+
 [node name="ScoreZone" type="Area2D" parent="." unique_id=1231936278]
 
 [node name="Collision" type="CollisionShape2D" parent="ScoreZone" unique_id=908398779]
 shape = SubResource("SegmentShape2D_abnah")
 
+[connection signal="body_entered" from="TopPillar/LoseUpper" to="." method="_on_lose_upper_body_entered"]
+[connection signal="body_entered" from="BottomPillar/LoseLower" to="." method="_on_lose_lower_body_entered"]
 [connection signal="body_entered" from="ScoreZone" to="." method="_on_score_zone_body_entered"]
