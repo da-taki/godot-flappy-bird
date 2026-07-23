@@ -1,6 +1,7 @@
 extends Node2D
 
 signal scored
+signal lost
 
 @export var speed: float = 180.0
 
@@ -22,9 +23,15 @@ func _on_score_zone_body_entered(body: Node2D) -> void:
 		scored.emit()
 		
 func _on_lose_upper_body_entered(body: Node2D) -> void:
-	if body is CharacterBody2D:
-		get_tree().change_scene_to_file("res://scenes/lose_screen.tscn")
-
+	lose(body)
+	
 func _on_lose_lower_body_entered(body: Node2D) -> void:
+	lose(body)
+	
+func lose(body: Node2D) -> void:
+	if has_lost:
+		return
+		
 	if body is CharacterBody2D:
-		get_tree().change_scene_to_file("res://scenes/lose_screen.tscn")
+		has_lost = true
+		lost.emit()
