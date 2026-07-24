@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://b6mykj6psi863"]
 
 [ext_resource type="Script" uid="uid://bj1s8xl6725gy" path="res://scripts/main_menu.gd" id="1_syvep"]
+[ext_resource type="Texture2D" uid="uid://cvaqrb76gte1q" path="res://assets/sprites/Flappy Bird Assets/Background/Background7.png" id="2_y1h3b"]
+[ext_resource type="Texture2D" uid="uid://b2tbu8skrqhq2" path="res://assets/sprites/Flappy Bird Assets/Tiles/Style 4/SimpleStyle4.png" id="3_jbsfc"]
 
 [node name="MainMenu" type="Control" unique_id=607391493]
 layout_mode = 3
@@ -11,14 +13,103 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_syvep")
 
-[node name="Background" type="ColorRect" parent="." unique_id=453026220]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0.46311802, 0.4802372, 1)
+[node name="Sky" type="Node2D" parent="." unique_id=1465782134]
+position = Vector2(580, 325)
+
+[node name="Sky1" type="Sprite2D" parent="Sky" unique_id=855552451]
+position = Vector2(-404, -39.00003)
+scale = Vector2(1.3671876, 2.2109373)
+texture = ExtResource("2_y1h3b")
+
+[node name="Sky2" type="Sprite2D" parent="Sky" unique_id=645514292]
+position = Vector2(-58, -40)
+scale = Vector2(1.3535156, 2.2226563)
+texture = ExtResource("2_y1h3b")
+
+[node name="Sky3" type="Sprite2D" parent="Sky" unique_id=749649929]
+position = Vector2(344.5, -40.499977)
+scale = Vector2(1.8007813, 2.2070313)
+texture = ExtResource("2_y1h3b")
+
+[node name="Ground" type="Node2D" parent="." unique_id=355454696]
+position = Vector2(578, 324)
+
+[node name="GroundPart1" type="Sprite2D" parent="Ground" unique_id=1798978207]
+position = Vector2(-0.7500458, 285)
+scale = Vector2(71.96874, 2.435484)
+texture = ExtResource("3_jbsfc")
+region_enabled = true
+region_rect = Rect2(-0.043109894, 48, 16.04311, 32)
+
+[node name="GroundPart2" type="Sprite2D" parent="Ground" unique_id=1579103940]
+position = Vector2(-476, 285.00003)
+scale = Vector2(4.7500005, 2.4375002)
+texture = ExtResource("3_jbsfc")
+region_enabled = true
+region_rect = Rect2(16, 48, 16, 32)
+
+[node name="GroundPart3" type="Sprite2D" parent="Ground" unique_id=426395334]
+position = Vector2(-336, 285.00003)
+scale = Vector2(4.775001, 2.4375007)
+texture = ExtResource("3_jbsfc")
+region_enabled = true
+region_rect = Rect2(28, 48, 20, 32)
+
+[node name="GroundPart4" type="Sprite2D" parent="Ground" unique_id=473489728]
+position = Vector2(-411.00003, 285)
+scale = Vector2(3.5000017, 2.4375)
+texture = ExtResource("3_jbsfc")
+region_enabled = true
+region_rect = Rect2(48, 48, 16, 32)
+
+[node name="GroundPart5" type="Sprite2D" parent="Ground" unique_id=176869299]
+position = Vector2(-265, 285)
+scale = Vector2(3.000001, 2.4375)
+texture = ExtResource("3_jbsfc")
+region_enabled = true
+region_rect = Rect2(16, 48, 16, 32)
+
+[node name="GroundPart6" type="Sprite2D" parent="Ground" unique_id=209900886]
+position = Vector2(-195, 285)
+scale = Vector2(2.875, 2.4375)
+texture = ExtResource("3_jbsfc")
+region_enabled = true
+region_rect = Rect2(32, 48, 32, 32)
+
+[node name="GroundPart7" type="Sprite2D" parent="Ground" unique_id=2147391783]
+position = Vector2(-55.000004, 285)
+scale = Vector2(5.2812514, 2.4375002)
+texture = ExtResource("3_jbsfc")
+region_enabled = true
+region_rect = Rect2(16, 48, 16, 32)
+
+[node name="GroundPart8" type="Sprite2D" parent="Ground" unique_id=1578673969]
+position = Vector2(97.50001, 285)
+scale = Vector2(3.2291667, 2.4375002)
+texture = ExtResource("3_jbsfc")
+region_enabled = true
+region_rect = Rect2(16, 48, 48, 32)
+
+[node name="GroundPart9" type="Sprite2D" parent="Ground" unique_id=1894486222]
+position = Vector2(268.25, 285.00003)
+scale = Vector2(5.218751, 2.4375002)
+texture = ExtResource("3_jbsfc")
+region_enabled = true
+region_rect = Rect2(32, 48, 16, 32)
+
+[node name="GroundPart10" type="Sprite2D" parent="Ground" unique_id=330976845]
+position = Vector2(364, 285)
+scale = Vector2(3.875, 2.4374998)
+texture = ExtResource("3_jbsfc")
+region_enabled = true
+region_rect = Rect2(48, 48, 16, 32)
+
+[node name="GroundPart11" type="Sprite2D" parent="Ground" unique_id=288281784]
+position = Vector2(484, 285)
+scale = Vector2(2.5416667, 2.4375)
+texture = ExtResource("3_jbsfc")
+region_enabled = true
+region_rect = Rect2(16, 48, 48, 32)
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1355277625]
 layout_mode = 1
@@ -33,9 +124,9 @@ layout_mode = 2
 
 [node name="TitleLabel" type="Label" parent="CenterContainer/MenueItems" unique_id=890124820]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.9302454, 0.70377743, 0.24344102, 1)
+theme_override_colors/font_color = Color(0.1080079, 0.13085309, 0.13597265, 1)
 theme_override_font_sizes/font_size = 48
-text = "Flappy Bird"
+text = "Flappy Bird Clone"
 horizontal_alignment = 1
 
 [node name="PlayButton" type="Button" parent="CenterContainer/MenueItems" unique_id=1796428767]

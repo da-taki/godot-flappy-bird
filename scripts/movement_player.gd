@@ -8,6 +8,8 @@ const JUMP_FORCE = -350.0
 func _ready() -> void:
 	animated_sprite.play("Flapping")
 func _physics_process(delta: float) -> void:
+	velocity.x = 0
+	
 	velocity.y += delta * GRAVITY
 	
 	if Input.is_action_just_pressed("ui_accept"):
@@ -19,3 +21,5 @@ func _physics_process(delta: float) -> void:
 		0.9
 	)
 	move_and_slide()
+	
+	velocity.x = 0
