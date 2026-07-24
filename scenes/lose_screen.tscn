@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cp6vo3bcny35c" path="res://scripts/lose_screen.gd" id="1_uglf1"]
 [ext_resource type="Texture2D" uid="uid://cvaqrb76gte1q" path="res://assets/sprites/Flappy Bird Assets/Background/Background7.png" id="2_73mov"]
 [ext_resource type="Texture2D" uid="uid://b2tbu8skrqhq2" path="res://assets/sprites/Flappy Bird Assets/Tiles/Style 4/SimpleStyle4.png" id="3_lytqm"]
+[ext_resource type="AudioStream" uid="uid://cyfsjvwvkfoq" path="res://assets/Audio/click.mp3" id="4_lytqm"]
 
 [node name="LoseScreen" type="Control" unique_id=582846462]
 layout_mode = 3
@@ -139,5 +140,8 @@ horizontal_alignment = 1
 [node name="RerunButton" type="Button" parent="CenterContainer/LoseScreenItems" unique_id=1774390720]
 layout_mode = 2
 text = "Play Again!"
+
+[node name="Click_Sound" type="AudioStreamPlayer2D" parent="." unique_id=932432498]
+stream = ExtResource("4_lytqm")
 
 [connection signal="pressed" from="CenterContainer/LoseScreenItems/RerunButton" to="." method="_on_rerun_button_pressed"]

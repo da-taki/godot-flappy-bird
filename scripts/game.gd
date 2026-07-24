@@ -11,6 +11,8 @@ const DIFFICULTY_SCORE: int = 7
 @onready var score_label: Label = $UI/ScoreLabel
 @onready var pillar_spawn_timer: Timer = $PillarSpawnTimer
 
+@onready var hit_sound: AudioStreamPlayer2D = $HitSound
+
 var is_game_over: bool = false
 
 func _ready() -> void:
@@ -80,7 +82,7 @@ func update_score_label() -> void:
 func game_over() -> void:
 	if is_game_over:
 		return
-
+	hit_sound.play()
 	is_game_over = true
 
 	get_tree().change_scene_to_file(

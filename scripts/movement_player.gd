@@ -4,6 +4,7 @@ const GRAVITY = 700.0
 const JUMP_FORCE = -350.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var flap_sound: AudioStreamPlayer = $FlapSound
 
 func _ready() -> void:
 	animated_sprite.play("Flapping")
@@ -14,6 +15,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		velocity.y = JUMP_FORCE
+		flap_sound.play()
 		
 	rotation = clamp(
 		velocity.y / 700.0,
