@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://ba2ebaoet6cuv"]
 
 [ext_resource type="Script" uid="uid://bx3w75wrihvqr" path="res://scripts/pillar_pair.gd" id="1_abnah"]
+[ext_resource type="Texture2D" uid="uid://dwwjtfhsaqtxu" path="res://assets/sprites/Flappy Bird Assets/Tiles/Style 4/PipeStyle4.png" id="2_optu5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2e4o8"]
-size = Vector2(80, 396)
+size = Vector2(135, 439)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1x3kl"]
-size = Vector2(79.5, 397.5)
+size = Vector2(135, 439.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abnah"]
-size = Vector2(80, 398)
+size = Vector2(127, 433)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_abnah"]
 a = Vector2(0, -61)
@@ -21,41 +22,70 @@ script = ExtResource("1_abnah")
 [node name="TopPillar" type="StaticBody2D" parent="." unique_id=1789429282]
 position = Vector2(0, -260)
 
-[node name="Visual" type="ColorRect" parent="TopPillar" unique_id=2089632261]
-offset_left = -40.0
-offset_top = -200.0
-offset_right = 40.0
-offset_bottom = 200.0
-color = Color(0.3547322, 0.55229604, 1, 1)
-
 [node name="Collision" type="CollisionShape2D" parent="TopPillar" unique_id=602602170]
-position = Vector2(0, 1)
+position = Vector2(3.5, -20.5)
 shape = SubResource("RectangleShape2D_2e4o8")
 
 [node name="LoseUpper" type="Area2D" parent="TopPillar" unique_id=2077520744]
 
 [node name="LoseUpperCollison" type="CollisionShape2D" parent="TopPillar/LoseUpper" unique_id=865473006]
-position = Vector2(0.25, -2.75)
+position = Vector2(2.5, -28.125)
 shape = SubResource("RectangleShape2D_1x3kl")
+
+[node name="Upper-middle" type="Sprite2D" parent="TopPillar" unique_id=1918048484]
+position = Vector2(2, -32)
+scale = Vector2(4.25, 16.749998)
+texture = ExtResource("2_optu5")
+region_enabled = true
+region_rect = Rect2(2, 16, 28, 16)
+
+[node name="Upper-Upper" type="Sprite2D" parent="TopPillar" unique_id=1857284993]
+position = Vector2(0.6562494, -207)
+scale = Vector2(4.521484, 6.2265635)
+texture = ExtResource("2_optu5")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 16)
+
+[node name="Upper-lower" type="Sprite2D" parent="TopPillar" unique_id=413999726]
+position = Vector2(2.5000057, 151.00002)
+scale = Vector2(4.2812505, 6.249999)
+texture = ExtResource("2_optu5")
+region_enabled = true
+region_rect = Rect2(0, 32, 32, 16)
 
 [node name="BottomPillar" type="StaticBody2D" parent="." unique_id=1900881131]
 position = Vector2(0, 260)
 
-[node name="Visual" type="ColorRect" parent="BottomPillar" unique_id=998390421]
-offset_left = -40.0
-offset_top = -200.0
-offset_right = 40.0
-offset_bottom = 200.0
-
 [node name="Collision" type="CollisionShape2D" parent="BottomPillar" unique_id=562582613]
-position = Vector2(0, -1)
+position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_abnah")
 
 [node name="LoseLower" type="Area2D" parent="BottomPillar" unique_id=1082272106]
 
 [node name="LoseLowerCollison" type="CollisionShape2D" parent="BottomPillar/LoseLower" unique_id=1849436675]
-position = Vector2(0, 1)
+position = Vector2(0, 6.25)
 shape = SubResource("RectangleShape2D_1x3kl")
+
+[node name="Lower-Upper" type="Sprite2D" parent="BottomPillar" unique_id=2075986605]
+position = Vector2(0.500002, -158)
+scale = Vector2(4.1562505, 7.0937495)
+texture = ExtResource("2_optu5")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 16)
+
+[node name="Lower-Lower" type="Sprite2D" parent="BottomPillar" unique_id=676880944]
+position = Vector2(1.9073486e-06, 179.5)
+scale = Vector2(4.125, 4.9375005)
+texture = ExtResource("2_optu5")
+region_enabled = true
+region_rect = Rect2(0, 32, 32, 16)
+
+[node name="Lower-Middle" type="Sprite2D" parent="BottomPillar" unique_id=273993643]
+position = Vector2(-0.50000453, 18.500002)
+scale = Vector2(4.09375, 15.187501)
+texture = ExtResource("2_optu5")
+region_enabled = true
+region_rect = Rect2(0, 16, 32, 16)
 
 [node name="ScoreZone" type="Area2D" parent="." unique_id=1231936278]
 

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://blrl1nvcpj0ug" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cdduxsasus3qr" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://cvaqrb76gte1q" path="res://assets/sprites/Flappy Bird Assets/Background/Background7.png" id="2_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://b2tbu8skrqhq2" path="res://assets/sprites/Flappy Bird Assets/Tiles/Style 4/SimpleStyle4.png" id="3_lnu2h"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_yqjtg"]
 a = Vector2(-637, 0)
@@ -13,6 +15,23 @@ b = Vector2(613, 160)
 
 [node name="Game" type="Node2D" unique_id=965813210]
 script = ExtResource("1_lnu2h")
+
+[node name="Sky" type="Node2D" parent="." unique_id=1301050972]
+
+[node name="Sky1" type="Sprite2D" parent="Sky" unique_id=980919130]
+position = Vector2(-404, -37.000027)
+scale = Vector2(1.3671876, 2.2109373)
+texture = ExtResource("2_lbhrr")
+
+[node name="Sky2" type="Sprite2D" parent="Sky" unique_id=1575034361]
+position = Vector2(-58, -36)
+scale = Vector2(1.3535156, 2.2226563)
+texture = ExtResource("2_lbhrr")
+
+[node name="Sky3" type="Sprite2D" parent="Sky" unique_id=332534208]
+position = Vector2(344.5, -37.499977)
+scale = Vector2(1.8007813, 2.2070313)
+texture = ExtResource("2_lbhrr")
 
 [node name="player" parent="." unique_id=1994911567 instance=ExtResource("1_uwrxv")]
 position = Vector2(0, -7)
@@ -40,8 +59,87 @@ position = Vector2(-1, -324)
 shape = SubResource("SegmentShape2D_yqjtg")
 
 [node name="LowerBorder" type="CollisionShape2D" parent="Borders" unique_id=355090589]
-position = Vector2(-2, 163)
+position = Vector2(-2, 87)
 shape = SubResource("SegmentShape2D_lnu2h")
+
+[node name="Ground" type="Node2D" parent="." unique_id=1483674371]
+
+[node name="GroundPart1" type="Sprite2D" parent="Ground" unique_id=469382605]
+position = Vector2(-0.7500458, 285)
+scale = Vector2(71.96874, 2.435484)
+texture = ExtResource("3_lnu2h")
+region_enabled = true
+region_rect = Rect2(-0.043109894, 48, 16.04311, 32)
+
+[node name="GroundPart2" type="Sprite2D" parent="Ground" unique_id=869684613]
+position = Vector2(-476, 285.00003)
+scale = Vector2(4.7500005, 2.4375002)
+texture = ExtResource("3_lnu2h")
+region_enabled = true
+region_rect = Rect2(16, 48, 16, 32)
+
+[node name="GroundPart3" type="Sprite2D" parent="Ground" unique_id=1606846699]
+position = Vector2(-336, 285.00003)
+scale = Vector2(4.775001, 2.4375007)
+texture = ExtResource("3_lnu2h")
+region_enabled = true
+region_rect = Rect2(28, 48, 20, 32)
+
+[node name="GroundPart4" type="Sprite2D" parent="Ground" unique_id=1316612371]
+position = Vector2(-411.00003, 285)
+scale = Vector2(3.5000017, 2.4375)
+texture = ExtResource("3_lnu2h")
+region_enabled = true
+region_rect = Rect2(48, 48, 16, 32)
+
+[node name="GroundPart5" type="Sprite2D" parent="Ground" unique_id=1384604761]
+position = Vector2(-265, 285)
+scale = Vector2(3.000001, 2.4375)
+texture = ExtResource("3_lnu2h")
+region_enabled = true
+region_rect = Rect2(16, 48, 16, 32)
+
+[node name="GroundPart6" type="Sprite2D" parent="Ground" unique_id=1189325827]
+position = Vector2(-195, 285)
+scale = Vector2(2.875, 2.4375)
+texture = ExtResource("3_lnu2h")
+region_enabled = true
+region_rect = Rect2(32, 48, 32, 32)
+
+[node name="GroundPart7" type="Sprite2D" parent="Ground" unique_id=1963480117]
+position = Vector2(-55.000004, 285)
+scale = Vector2(5.2812514, 2.4375002)
+texture = ExtResource("3_lnu2h")
+region_enabled = true
+region_rect = Rect2(16, 48, 16, 32)
+
+[node name="GroundPart8" type="Sprite2D" parent="Ground" unique_id=792031913]
+position = Vector2(97.50001, 285)
+scale = Vector2(3.2291667, 2.4375002)
+texture = ExtResource("3_lnu2h")
+region_enabled = true
+region_rect = Rect2(16, 48, 48, 32)
+
+[node name="GroundPart9" type="Sprite2D" parent="Ground" unique_id=232853990]
+position = Vector2(268.25, 285.00003)
+scale = Vector2(5.218751, 2.4375002)
+texture = ExtResource("3_lnu2h")
+region_enabled = true
+region_rect = Rect2(32, 48, 16, 32)
+
+[node name="GroundPart10" type="Sprite2D" parent="Ground" unique_id=10287225]
+position = Vector2(364, 285)
+scale = Vector2(3.875, 2.4374998)
+texture = ExtResource("3_lnu2h")
+region_enabled = true
+region_rect = Rect2(48, 48, 16, 32)
+
+[node name="GroundPart11" type="Sprite2D" parent="Ground" unique_id=646882792]
+position = Vector2(484, 285)
+scale = Vector2(2.5416667, 2.4375)
+texture = ExtResource("3_lnu2h")
+region_enabled = true
+region_rect = Rect2(16, 48, 48, 32)
 
 [connection signal="timeout" from="PillarSpawnTimer" to="." method="_on_pillar_spawn_timer_timeout"]
 [connection signal="body_entered" from="Borders" to="." method="_on_borders_body_entered"]

@@ -1,19 +1,69 @@
 [gd_scene format=3 uid="uid://cdduxsasus3qr"]
 
-[ext_resource type="Texture2D" uid="uid://0hcd7jc54to5" path="res://assets/sprites/Player.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://v0y2kkjqemga" path="res://scripts/movement_player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://d1k4umpla2w83" path="res://assets/sprites/Flappy Bird Assets/Player/StyleBird1/Bird1-2.png" id="2_g2els"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifeun"]
-size = Vector2(60, 60)
+[sub_resource type="CircleShape2D" id="CircleShape2D_smehm"]
+radius = 23.021729
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("2_g2els")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("2_g2els")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("2_g2els")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ifeun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
+}],
+"loop": 1,
+"name": &"Flapping",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1994911567]
 script = ExtResource("1_g2els")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1698630442]
-position = Vector2(0, 1.0000012)
-scale = Vector2(0.6, 0.59999996)
-texture = ExtResource("1_3vyb7")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=106593553]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_ifeun")
+position = Vector2(1, 2)
+shape = SubResource("CircleShape2D_smehm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1406878396]
+position = Vector2(9.536743e-07, 1.0000019)
+scale = Vector2(3.7499998, 3.7499998)
+sprite_frames = SubResource("SpriteFrames_ifeun")
+animation = &"Flapping"
+frame_progress = 0.2750457
