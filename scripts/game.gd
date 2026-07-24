@@ -84,7 +84,9 @@ func game_over() -> void:
 		return
 	hit_sound.play()
 	is_game_over = true
-
+	
+	await get_tree().create_timer(0.3).timeout
+	
 	get_tree().change_scene_to_file(
 		"res://scenes/lose_screen.tscn"
 	)
